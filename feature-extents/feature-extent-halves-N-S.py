@@ -7,8 +7,12 @@ inputFeatureClass = "D:/working_files/data.gdb/Counties"
 env.workspace = "D:/working_files/data.gdb"
 inputUniqueIdField = 'FIPS'
 outputFc = "ExtentRectangle_halves"
+# The output feature class' template must at least include fields for:
+#  - unique ID from the input features in the same data type as input unique ID
+#  - string field that will hold the name of the new secondary identifier of the shape - either 'North', 'South', 'East', or 'West'
+# Only these 2 fields are written to the new feature class
 outputFcTemplate = "OutputTemplate"
-outputPartIdentifierField = 'Page_Part'
+outputSecondaryIdentifierField = 'Page_Part'
 
 # outputValues stores the new polygons created from each input feature's extent
 outputValues = []
@@ -51,7 +55,7 @@ with arcpy.da.SearchCursor(inputFeatureClass, ['SHAPE@', inputUniqueIdField]) as
 		outputValues.append((bottomPolygon, row[1], 'south'))
 
 # Write new shapes with attributes with insert cursor
-insertCursor = arcpy.da.InsertCursor(outputFc, ['SHAPE@', inputUniqueIdField, outputPartIdentifierField])
+insertCursor = arcpy.da.InsertCursor(outputFc, ['SHAPE@', inputUniqueIdField, outputSecondaryIdentifierField])
 for output in outputValues:
 	insertCursor.insertRow(output)
 del insertCursor
