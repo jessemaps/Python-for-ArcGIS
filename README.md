@@ -34,6 +34,12 @@ Create extent rectangles from input feature class.
 Extent rectangles are feature envelopes, oriented to North.  
 These extent rectangles don't have attributes, so you have to later add the attributes by joining to the original data by object ID.  
 
+### features-extent-rectangles-with-dimensions.py
+Create extent rectangles for each feature, and write unique identifier, width, height, and orientation to attribute table.  
+Extent rectangles are feature envelopes, oriented to North.  
+*Input layer should be in WGS84.*
+Width and height attributes are geodesic distances calculated in meters at the latitude of the center of each feature.  
+
 ### features-hull-rectangles.py
 Create hull rectangles from input feature class.   
 Adapted from [sample on GeoNet](https://community.esri.com/thread/92651) from user csny490  
