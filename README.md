@@ -46,4 +46,12 @@ Adapted from [sample on GeoNet](https://community.esri.com/thread/92651) from us
 Hull rectangles are different from envelopes in that they're rotated/oriented so longest side is parallel with widest section of shape.  
 These Hull rectangles don't have attributes, so you have to later add the attributes by joining to the original data by object ID.  
 
+## file-processing
+Convert or consolidate files, usually in a batch.  
+
+### Batch-KML-to-GDB.py
+Combines multiple KML/KMZ files into 1 geodatabase. 
+The Kml_to_Layer tool creates a new GDB for each KML file - this runs that tool on all KMLs in a folder, then copies them to a single GDB. 
+It also adds a KmlName attribute to each new feature class with the source KML file name.  
+This script adapted from the Esri sample: https://desktop.arcgis.com/en/arcmap/latest/tools/conversion-toolbox/kml-to-layer.htm  
 
