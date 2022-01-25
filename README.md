@@ -1,6 +1,12 @@
 # Python-for-ArcGIS
 Collection of random Python scripts I use in ArcGIS for various projects and want to use again
 
+## arcgis-rest-api
+Scripts to manage online data and maps with the ArcGIS REST API.  
+These are all based on the sample form Esri: UpdateWebmapJson-original.py  
+Currently there are a handful of scripts that update properties of webmaps to change bookmarks or renderers on layers, or clone items.
+
+
 ## data-driven-pages
 Scripts used in conjunction with data-driven pages  
 
@@ -83,4 +89,3 @@ Combines multiple KML/KMZ files into 1 geodatabase.
 The Kml_to_Layer tool creates a new GDB for each KML file - this runs that tool on all KMLs in a folder, then copies them to a single GDB. 
 It also adds a KmlName attribute to each new feature class with the source KML file name.  
 This script adapted from the Esri sample: https://desktop.arcgis.com/en/arcmap/latest/tools/conversion-toolbox/kml-to-layer.htm  
-
