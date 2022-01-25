@@ -10,6 +10,9 @@ for pageNum in range(1,mxd.dataDrivenPages.pageCount+1):
 	#UniqueNameField is the field name containing the page names - update to match project data:
 	pageName = mxd.dataDrivenPages.pageRow.UniqueNameField
 	pageShape = mxd.dataDrivenPages.pageRow.SHAPE
+	dataFrameExtent = df.extent
+	dfWidth = dataFrameExtent.XMax - dataFrameExtent.XMin
+	dataFrameExtent.XMin  -> dataFrameExtent.XMin + dfWidth * 0.0435
 	extent = pageShape.extent
 	width = extent.XMax - extent.XMin
 	height = extent.YMax - extent.YMin
